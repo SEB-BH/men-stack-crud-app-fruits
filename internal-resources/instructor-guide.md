@@ -3,12 +3,30 @@
   <span class="subhead">Instructor Guide</span>
 </h1>
 
-**_Nothing here yet!_**
+## Internal
+
+### Prerequisites
+
+- Intro to Express
+- RESTful Routing
+- EJS
+- Intro to Mongoose
+
+### Solution code
+
+🏁 [Solution code](https://git.generalassemb.ly/modular-curriculum-all-courses/men-stack-crud-app-fruits-solution)
+
+### Course landing pages
+
+- [SEB - Software Engineering Bootcamp](https://ga-curriculum.github.io/men-stack-crud-app-fruits/canvas-landing-pages/seb.html)
+- [Fallback](https://ga-curriculum.github.io/men-stack-crud-app-fruits/canvas-landing-pages/fallback.html)
+
+### Resources
+
+✏️ [Instructor Guide](./internal-resources/instructor-guide.md)
+
+🎥 [Video Hub](./internal-resources/video-hub.md)
+
+🏗️ [Release Notes](./internal-resources/release-notes.md)
 
 ---
-
-🏗️ **Under Construction**
-
-We are constantly working to improve our resources for instructors and students.
-
-**Have something to contribute to this Instructor Guide?** [Let us know](https://pages.git.generalassemb.ly/modular-curriculum-all-courses/universal-resources-internal/module-feedback.html).
