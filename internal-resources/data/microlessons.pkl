@@ -1,0 +1,102 @@
+import "https://pages.git.generalassemb.ly/modular-curriculum-all-courses/universal-resources-internal/static/v2/pkl/template.pkl" as Template
+
+// Add microlessons here, in the order they should be delivered
+
+setup = new Template.Microlesson {
+  friendlyName = "Setup"
+  dirName = "setup"
+  type = "Content"
+  videoUrl = ""
+}
+
+buildAndRunServerJs = new Template.Microlesson {
+  friendlyName = "Build and Run <code class='filepath'>server.js</code>"
+  dirName = "build-and-run-serverjs"
+  type = "Content"
+  videoUrl = ""
+}
+
+buildALandingPage = new Template.Microlesson {
+  friendlyName = "Build a Landing Page"
+  dirName = "build-a-landing-page"
+  type = "Content"
+  videoUrl = ""
+}
+
+useMongooseToConnectToMongodb = new Template.Microlesson {
+  friendlyName = "Use Mongoose to Connect to MongoDB"
+  dirName = "use-mongoose-to-connect-to-mongodb"
+  type = "Content"
+  videoUrl = ""
+}
+
+buildTheFruitModel = new Template.Microlesson {
+  friendlyName = "Build the Fruit Model"
+  dirName = "build-the-fruit-model"
+  type = "Content"
+  videoUrl = ""
+}
+
+buildTheNewFruitPage = new Template.Microlesson {
+  friendlyName = "Build the New Fruit Page"
+  dirName = "build-the-new-fruit-page"
+  type = "Content"
+  videoUrl = ""
+}
+
+createAFruit = new Template.Microlesson {
+  friendlyName = "Create a Fruit"
+  dirName = "create-a-fruit"
+  type = "Content"
+  videoUrl = ""
+}
+
+buildTheFruitsIndexPage = new Template.Microlesson {
+  friendlyName = "Build the Fruits Index Page"
+  dirName = "build-the-fruits-index-page"
+  type = "Content"
+  videoUrl = ""
+}
+
+buildTheFruitsShowPage = new Template.Microlesson {
+  friendlyName = "Build the Fruits Show Page"
+  dirName = "build-the-fruits-show-page"
+  type = "Content"
+  videoUrl = ""
+}
+
+deleteAFruit = new Template.Microlesson {
+  friendlyName = "Delete a Fruit"
+  dirName = "delete-a-fruit"
+  type = "Content"
+  videoUrl = ""
+}
+
+buildTheEditFruitPage = new Template.Microlesson {
+  friendlyName = "Build the Edit Fruit Page"
+  dirName = "build-the-edit-fruit-page"
+  type = "Content"
+  videoUrl = ""
+}
+
+updateAFruit = new Template.Microlesson {
+  friendlyName = "Update a Fruit"
+  dirName = "update-a-fruit"
+  type = "Content"
+  videoUrl = ""
+}
+
+recap = new Template.Microlesson {
+  friendlyName = "Recap"
+  dirName = "recap"
+  type = "Content"
+  videoUrl = ""
+}
+
+styleTheApplication = new Template.Microlesson {
+  friendlyName = "Style the Application"
+  dirName = "style-the-application"
+  type = "Content"
+  videoUrl = ""
+}
+
