@@ -60,12 +60,12 @@ Since finding a fruit is an asynchronous operation, we use `async` before our ro
 
 Test the route by clicking the "Edit" link on the show page of a particular fruit. Check your terminal to make sure you see the data for the fruit that you intend to edit.
 
-Lastly, let's modify our route so that it renders `views/fruits/edit.ejs`, passing in the `foundFruit` variable we created above:
+Lastly, let's modify our route so that it renders `views/edit.ejs`, passing in the `foundFruit` variable we created above:
 
 ```javascript
 app.get("/fruits/:fruitId/edit", async (req, res) => {
   const foundFruit = await Fruit.findById(req.params.fruitId);
-  res.render("fruits/edit.ejs", {
+  res.render("edit.ejs", {
     fruit: foundFruit,
   });
 });
@@ -75,10 +75,10 @@ Test the route to see an error- time to create the edit page!
 
 ## Create the `edit` template
 
-Now that the route is set up, let's create the template. Create a `edit.ejs` template inside the `views/fruits`:
+Now that the route is set up, let's create the template. Create a `edit.ejs` template inside the `views`:
 
 ```bash
-touch views/fruits/edit.ejs
+touch views/edit.ejs
 ```
 
 For our Edit page, we'll need a form for editing fruit data. We can borrow the same form from our `new.ejs` page and make some adjustments:

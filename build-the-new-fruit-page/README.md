@@ -33,8 +33,7 @@ Test it by visiting `localhost:3000/fruits/new` in your browser.
 Let's now create the template for our "new" route. This template will provide a user-friendly interface for adding new fruits to our application. To keep our templates organized, especially as our application grows, we'll place this new template in a dedicated sub-folder within the `views` directory.
 
 ```bash
-mkdir views/fruits
-touch views/fruits/new.ejs
+touch views/new.ejs
 ```
 
 Organizing our templates into model-specific sub-folders is a good practice, especially for larger applications with multiple models. Each model can have its own `new.ejs` template, among others.
@@ -42,7 +41,7 @@ Organizing our templates into model-specific sub-folders is a good practice, esp
 Now, let's add some basic content to our `new.ejs` template for fruits:
 
 ```html
-<!-- views/fruits/new.ejs -->
+<!-- views/new.ejs -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -61,14 +60,14 @@ To ensure best practice, we'll focus on testing each component as soon as it's d
 
 ## Updating the new route
 
-Instead of `res.send`, let's render the `new.ejs` template we just created in the `views/fruit` directory:
+Instead of `res.send`, let's render the `new.ejs` template we just created in the `views` directory:
 
 ```javascript
 // server.js
 
 // GET /fruits/new
 app.get("/fruits/new", (req, res) => {
-  res.render("fruits/new.ejs");
+  res.render("new.ejs");
 });
 ```
 
@@ -79,7 +78,7 @@ Visit `localhost:3000/fruits/new` in the browser. This time we should see the `<
 Finally, let's add a form to our `new.ejs` template. This form will allow users to input data for creating a new fruit. In our Fruit model, we have two properties: `name` and `isReadyToEat`. The `name` field should be a text input where users can type the name of the fruit. For the `isReadyToEat` property, which is a boolean, we'll use a checkbox input. This way, users can check the box if the fruit is ready to eat.
 
 ```html
-<!-- views/fruits/new.ejs -->
+<!-- views/new.ejs -->
 
 <body>
   <h1>Create a New Fruit!</h1>

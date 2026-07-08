@@ -141,7 +141,7 @@ Now that we've got a fully functional app, it's time to add some styling! These 
     <a class="fruits-index-link" href="/fruits">Browse Fruits</a>
     ```
 
-2. Wrap the text of that same `<a>` tag in a `<div>` with the class name of `index-link-text`. Do this for all links in the app that say "Back to Fruits" (on the `fruits/edit.ejs` and `fruits/show.ejs` pages):
+2. Wrap the text of that same `<a>` tag in a `<div>` with the class name of `index-link-text`. Do this for all links in the app that say "Back to Fruits" (on the `edit.ejs` and `show.ejs` pages):
 
     ```html
     <!-- edit.ejs / show.ejs -->
@@ -345,9 +345,9 @@ Now that we've got a fully functional app, it's time to add some styling! These 
     }
     ```
 
-## Styling `fruits/index.ejs`
+## Styling `index.ejs`
 
-1. Modify the HTML structure on `fruits/index.ejs` to create a header `<div>` and wrap the fruit names in cards:
+1. Modify the HTML structure on `index.ejs` to create a header `<div>` and wrap the fruit names in cards:
 
     ```html
     <!-- index.ejs -->

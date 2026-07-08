@@ -20,7 +20,7 @@ To create a way for users to view more details about an individual fruit, we'll 
 Here is our current `index` page code:
 
 ```html
-<!-- views/fruits/index.ejs -->
+<!-- views/index.ejs -->
 
 <body>
   <h1>All Fruits</h1>
@@ -37,7 +37,7 @@ To make each fruit name a clickable link, we'll wrap the `<%= fruit.name %>` wit
 Lets update the code and wrap each fruit item in a link:
 
 ```html
-<!-- views/fruits/index.ejs -->
+<!-- views/index.ejs -->
 
 <body>
   <h1>All Fruits</h1>
@@ -58,7 +58,7 @@ As we iterate through the fruit objects, we already access their names using `fr
 Utilizing `_id` will give us the `id` that we need. Now we can make the adjustment to the `<a>` tag and add a dynamic `href`.
 
 ```html
-<!-- views/fruits/index.ejs -->
+<!-- views/index.ejs -->
 
 <body>
   <h1>All Fruits</h1>
@@ -137,7 +137,7 @@ After fetching the fruit, we'll update from `res.send()` to `res.render()` to di
 ```js
 app.get("/fruits/:fruitId", async (req, res) => {
   const foundFruit = await Fruit.findById(req.params.fruitId);
-  res.render("fruits/show.ejs", { fruit: foundFruit });
+  res.render("show.ejs", { fruit: foundFruit });
 });
 ```
 
@@ -146,10 +146,10 @@ If you test the route, you'll see a familiar error. We need a `show` page.
 
 ## Create the `show` template
 
-Now that the route is set up, let's create the template. Create a `show.ejs` template inside the `views/fruits`:
+Now that the route is set up, let's create the template. Create a `show.ejs` template inside the `views`:
 
 ```bash
-touch views/fruits/show.ejs
+touch views/show.ejs
 ```
 
 Add the following HTML boilerplate to `show.ejs`:
@@ -173,7 +173,7 @@ Refresh your browser to see a rendered page.
 Let's enhance our application to show detailed information about each fruit. We'll achieve this by dynamically updating our HTML template using the `fruit` data we've passed.
 
 ```html
-<!-- views/fruits/show.ejs -->
+<!-- views/show.ejs -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -196,7 +196,7 @@ To enhance our fruit details page, we'll incorporate conditional rendering based
 We'll use EJS control flow to dynamically display a message about the fruit's readiness. Insert an `if/else` statement in the HTML body, right after the `<h1>` tag:
 
 ```html
-<<!-- views/fruits/show.ejs -->
+<<!-- views/show.ejs -->
 
 <body>
   <h1><%= fruit.name %></h1>

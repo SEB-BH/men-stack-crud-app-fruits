@@ -70,7 +70,7 @@ We'll pass the `allFruits` data to our template under the key `fruits`. This way
 ```js
 app.get("/fruits", async (req, res) => {
   const allFruits = await Fruit.find();
-  res.render("fruits/index.ejs", { fruits: allFruits });
+  res.render("index.ejs", { fruits: allFruits });
 });
 ```
 
@@ -78,20 +78,20 @@ Now if we navigate to [localhost:3000/fruits](http://localhost:3000/fruits) we'l
 
 ![Error No View](./assets/error-view.png)
 
-However, this error is actually quite helpful. It points us toward our next step. The message indicates a specific issue: we're attempting to render a view called `index.ejs` located in the `views/fruits` directory, but this file does not currently exist. Let's fix that! 
+However, this error is actually quite helpful. It points us toward our next step. The message indicates a specific issue: we're attempting to render a view called `index.ejs` located in the `views` directory, but this file does not currently exist. Let's fix that! 
 
 ## Create the `index` template
 
-Now that the route is set up, let's create the template. Create an `index.ejs` file inside the `views/fruits` directory:
+Now that the route is set up, let's create the template. Create an `index.ejs` file inside the `views` directory:
 
 ```bash
-touch views/fruits/index.ejs
+touch views/index.ejs
 ```
 
 Inside this template file, add the following HTML boilerplate:
 
 ```html
-<!-- views/fruits/index.ejs -->
+<!-- views/index.ejs -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -113,7 +113,7 @@ In our previous step, we used `res.render()` to pass the fruits data from our da
 We can list our fruits in a simple, bulleted list format using an unordered list `<ul>`. This is done by looping over the fruits array and dynamically generating an `<li>` for each fruit's name: 
 
 ```html
-<!-- views/fruits/index.ejs -->
+<!-- views/index.ejs -->
 
 <body>
   <h1>All Fruits</h1>
@@ -169,7 +169,7 @@ Next, let's add a link on the `index` page of our application. This link will be
 Add the following HTML snippet to the fruit `index` page:
 
 ```html
-<!-- views/fruits/index.ejs -->
+<!-- views/index.ejs -->
 <a href="/fruits/new">Add New Fruit</a>
 ```
 
