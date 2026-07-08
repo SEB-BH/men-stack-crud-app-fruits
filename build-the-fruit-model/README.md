@@ -101,7 +101,7 @@ Here's how we can include the `Fruit` model in `server.js`:
 ```javascript
 // server.js
 
-mongoose.connect(process.env.MONGO_URI);
+mongoose.connect(process.env.MONGODB_URI);
 
 mongoose.connection.on("connected", () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
