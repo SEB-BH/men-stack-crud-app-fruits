@@ -12,7 +12,7 @@
     "solutionCode": "",
     "deployedSite": ""
   },
-  "courses": [
+  "courses": [ 
     {
       "name": "fallback",
       "courseAcronym": "",
@@ -50,6 +50,16 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
+          "friendlyName": "Mongoose Concepts",
+          "dirName": "mongoose-concepts",
+          "type": "Content",
+          "skill": "",
+          "learningObjective": "",
+          "videoUrl": "",
+          "videoLengthInMinutes": 0,
+          "estimatedDeliveryTimeInMinutes": 0
+        },
+        {
           "friendlyName": "Use Mongoose to Connect to MongoDB",
           "dirName": "use-mongoose-to-connect-to-mongodb",
           "type": "Content",
@@ -62,6 +72,16 @@
         {
           "friendlyName": "Build the Fruit Model",
           "dirName": "build-the-fruit-model",
+          "type": "Content",
+          "skill": "",
+          "learningObjective": "",
+          "videoUrl": "",
+          "videoLengthInMinutes": 0,
+          "estimatedDeliveryTimeInMinutes": 0
+        },
+        {
+          "friendlyName": "Mongoose Queries",
+          "dirName": "mongoose-queries",
           "type": "Content",
           "skill": "",
           "learningObjective": "",
@@ -219,6 +239,16 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
+          "friendlyName": "Mongoose Concepts",
+          "dirName": "mongoose-concepts",
+          "type": "Content",
+          "skill": "",
+          "learningObjective": "",
+          "videoUrl": "",
+          "videoLengthInMinutes": 0,
+          "estimatedDeliveryTimeInMinutes": 0
+        },
+        {
           "friendlyName": "Use Mongoose to Connect to MongoDB",
           "dirName": "use-mongoose-to-connect-to-mongodb",
           "type": "Content",
@@ -231,6 +261,16 @@
         {
           "friendlyName": "Build the Fruit Model",
           "dirName": "build-the-fruit-model",
+          "type": "Content",
+          "skill": "",
+          "learningObjective": "",
+          "videoUrl": "",
+          "videoLengthInMinutes": 0,
+          "estimatedDeliveryTimeInMinutes": 0
+        },
+        {
+          "friendlyName": "Mongoose Queries",
+          "dirName": "mongoose-queries",
           "type": "Content",
           "skill": "",
           "learningObjective": "",
