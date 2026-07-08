@@ -24,8 +24,7 @@ Next, create a `.env` file in your project's root directory:
 ```bash
 touch .env
 ```
-
-This file will be used to store any sensitive, secret information that the application needs to run, but that we don't want to commit to GitHub. Database connection strings definitely qualify: we don't want just anybody to access our database using this string! To ensure that our `.env` file doesn't make its way up to GitHub, create a `.gitignore` file:
+To ensure that our `.env` file doesn't make its way up to GitHub, create a `.gitignore` file:
 
 ```bash
 touch .gitignore
@@ -37,8 +36,6 @@ In that file, add the following:
 .env
 node_modules
 ```
-
-The first line above will make sure that the `.env` file isn't tracked by Git. The second line does the same thing, but for the `node_modules` directory that contains all the dependencies that `npm` has already installed or will install in the future. Ignoring `node_modules` is not about security, though. Rather, it reduces the amount of code in our repo by eliminating third party packages that can easily be installed via `npm`.
 
 Now that we're certain Git won't track it, let's edit our `.env` file.
 
@@ -67,27 +64,25 @@ MONGODB_URI=mongodb+srv://<username>:<password>@sei.azure.mongodb.net/?retryWrit
 
 > Note: It is important that there are no spaces between `MONGODB_URI`, `=`, and your atlas connection string. It should be written as one continuous string with no spaces.
 
-This will make the connection string available in our application on the `process.env.MONGODB_URI` property.
 
 ### Name your database collection
 
-Your connection string will default to a generic unnamed database collection as indicated by the `/?` towards the end of the connection string. However, you **_must_** update this to your preferred collection name. In this application, that will be `fruits`. You can specify the preferred collection name by adding it between the `/` and the `?` in the connection string. 
-
-Here's how that will look for this app: `/fruits?`. The full connection string for this app will read like this:
+Here's how our database name will look for this app: `/fruits_db?`. The full connection string for this app will read like this:
 
 ```plaintext
-MONGODB_URI=mongodb+srv://<username>:<password>@sei.azure.mongodb.net/fruits?retryWrites=true
+MONGODB_URI=mongodb+srv://<username>:<password>@sei.azure.mongodb.net/fruits_db?retryWrites=true
 ```
 
-> Again, do not use the above connection string in your application, it will not work. Simply note where `/fruits?` exists in the value for `MONGODB_URI` and replicate it in your own version.
+> Again, do not use the above connection string in your application, it will not work. Simply note where `/fruits_db?` exists in the value for `MONGODB_URI` and replicate it in your own version.
 
-Anytime you need to make a new app, you can use this same connection string and only replace the `/fruits?` portion of the string. Ensure the name you assign is unique to that project - for example, once we've used the name `fruits` for this app, you shouldn't use it again. Also, your collection name should not contain any special characters.
+Anytime you need to make a new app, you can use this same connection string and only replace the `/fruits_db?` portion of the string. Ensure the name you assign is unique to that project - for example, once we've used the name `fruits_db` for this app, you shouldn't use it again. Also, your database name should not contain any special characters except for `_` as MongoDB prefers snake_case naming conventions.
 
-## Connecting to MongoDB in `server.js`
 
-With our environment variables added, we need to require the `dotenv` package in our `server.js` file to access them:
+## Load environment variables in `server.js`
 
-At the **_top_** of your `server.js` file, add:
+Now we need to tell our app to read the `.env` file.
+
+At the very top of `server.js`, add `dotenv`:
 
 ```js
 //server.js
@@ -103,7 +98,19 @@ app.listen(3000, () => {
 });
 ```
 
+The `dotenv.config()` line loads the values from `.env`.
+
+After this line runs, our app can use:
+
+```js
+process.env.MONGODB_URI
+```
+
+That gives us access to the connection string without writing it directly in `server.js`.
+
 It's important that these two lines of code are at the top of this file - it ensures that the environment variables are available everywhere across your application.
+
+## Connecting to MongoDB in `server.js`
 
 Next, we'll need to require `mongoose` so that we can use it to connect to our database:
 
@@ -156,7 +163,7 @@ const app = express();
 mongoose.connect(process.env.MONGODB_URI);
 // log connection status to terminal on start
 mongoose.connection.on("connected", () => {
-  console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
+  console.log(`Connected to MongoDB ${mongoose.connection.name} 🥭`);
 });
 
 app.listen(3000, () => {
@@ -164,10 +171,21 @@ app.listen(3000, () => {
 });
 ```
 
-This is a Mongoose event listener that runs the supplied callback function once we have connected to a database. In the callback function, we log the name of the database to which we've connected - in this case, it should be `fruits`.
+This is a Mongoose event listener that runs the supplied callback function once we have connected to a database. In the callback function, we log the name of the database to which we've connected - in this case, it should be `fruits_db`.
 
 ## Start the app
 
 Launch the application with `nodemon`. You should see two messages in your terminal - one confirming that the app is ready, and a second confirming that you are connected to your database.
 
-> ♻️ Repeatable pattern: Any app you build that connects to a MongoDB database in Node using Mongoose will need a `.env` file with a connection string inside of it, and a `mongoose.connect()` method in your `server.js` file. You will pass this method the environment variable you created in your `.env` file - in this case `MONGODB_URI`.
+## The repeatable pattern
+
+Most Express apps that use MongoDB will follow this pattern:
+
+1. Install `mongoose` and `dotenv`.
+2. Store the connection string in `.env`.
+3. Add `.env` to `.gitignore`.
+4. Load `dotenv` in `server.js`.
+5. Import `mongoose`.
+6. Connect with `mongoose.connect(process.env.MONGODB_URI)`.
+
+This is a pattern you will use many times as a developer.

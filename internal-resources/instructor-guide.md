@@ -30,3 +30,6 @@
 🏗️ [Release Notes](./internal-resources/release-notes.md)
 
 ---
+
+## EDITS
+- should we put the connection string in a separate file?

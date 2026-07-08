@@ -19,24 +19,7 @@ npm i ejs
 
 We don't need to require it in our `server.js` file because express knows how to find this package out of the box.
 
-## Build the route
-
-To serve our landing page, we'll need to start with a route in our `server.js` file. We'll set it up to send a simple response for testing, then we'll come back and have it render an EJS file later. This code, as well as all future routes, should be above the `app.listen()` method.
-
-```javascript
-// server.js
-
-// GET /
-app.get("/", async (req, res) => {
-  res.send("hello, friend!");
-});
-```
-
-Test the route by starting your server and browsing to `localhost:3000`. You should receive a message in the browser console saying, "hello, friend!"
-
 ## Create a `views` directory
-
-We've confirmed the route is valid at this point, so let's do more than just `res.send` a message back to the browser.
 
 We're going to need a `views` directory to hold all of our templates. Let's create it now:
 
@@ -44,16 +27,16 @@ We're going to need a `views` directory to hold all of our templates. Let's crea
 mkdir views
 ```
 
-Our landing page will be an `index.ejs` file that is inside of this directory. Let's create that too:
+Our landing page will be an `home.ejs` file that is inside of this directory. Let's create that too:
 
 ```bash
-touch views/index.ejs
+touch views/home.ejs
 ```
 
-Open `index.ejs` and add the following HTML boilerplate and content inside of the `<body>` tag. Don't forget to also change the `<title>`!
+Open `home.ejs` and add the following HTML boilerplate and content inside of the `<body>` tag. Don't forget to also change the `<title>`!
 
 ```html
-<!-- views/index.ejs -->
+<!-- views/home.ejs -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -76,7 +59,7 @@ To show our homepage when a user visits the root `/` of our application, we need
 
 // GET /
 app.get("/", async (req, res) => {
-  res.render("index.ejs");
+  res.render("home.ejs");
 });
 ```
 

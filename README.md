@@ -14,12 +14,14 @@ Welcome to the "Fruits" App, a comprehensive module for intermediate learners re
 | Lesson                                                                               | Skills                                                |
 | ------------------------------------------------------------------------------------ | ----------------------------------------------------- |
 | [Setup](./setup/README.md)                                                           | Setting up the development environment                |
-| [Build and Run `server.js`](./build-and-run-serverjs/README.md)                      | Create a basic Express server                         |
+| [Build and Run `server.js`](./build-annd-run-serverjs/README.md)                     | Create a basic Express server                         |
 | [Build a Landing Page](./build-a-landing-page/README.md)                             | Implement a landing page using Express and EJS        |
+| [Mongoose Concepts](./mongoose-concepts/README.md)                                   | Discuss the technologies we'll be using.              |
 | [Use Mongoose to Connect to MongoDB](./use-mongoose-to-connect-to-mongodb/README.md) | Connect to MongoDB Atlas via connection string        |
 | [Build the Fruit Model](./build-the-fruit-model/README.md)                           | Define and export a Mongoose model                    |
+| [Mongoose Queries](./mongoose-queries/README.md)                                     | Write simply queries to CRUD on our Fruit model       |
 | [Build the New Fruit Page](./build-the-new-fruit-page/README.md)                     | Construct a `new` route and view                      |
-| [Create a Fruit](./create-a-fruit/README.md)                                         | Build `create` functionality in a `POST` route        |
+| [Create a Fruit](./create-a-fruit/README.md)                                         | Build `create` functionality                          |
 | [Build the Fruits Index Page](./build-the-fruits-index-page/README.md)               | Find and render all fruits on an `index` page         |
 | [Build the Fruits Show Page](./build-the-fruits-show-page/README.md)                 | Construct a `show` route and view                     |
 | [Delete a Fruit](./delete-a-fruit/README.md)                                         | Build `delete` functionality in a `DELETE` route      |
@@ -27,6 +29,12 @@ Welcome to the "Fruits" App, a comprehensive module for intermediate learners re
 | [Update a Fruit](./update-a-fruit/README.md)                                         | Build `update` functionality in a `PUT` route         |
 | [Recap](./recap/README.md)                                                           | Review technologies used and application architecture |
 | [Style the Application](./style-the-application/README.md)                           | Bring your app to life with CSS                       |
+
+## Backup
+
+| Lesson                                                                               | Skills                                                |
+| ------------------------------------------------------------------------------------ | ----------------------------------------------------- |
+| [Use MongoDB Locally](./use-mongodb-locally/README.md)                                                           | Setting up the development environment                |
 
 ## References
 

@@ -46,3 +46,15 @@ nodemon
 ```
 
 Our server should be up and running and you should see _`Listening on port 3000`_ logged to your terminal.
+
+
+## Build a test route
+
+```js
+// GET /
+app.get("/", async (req, res) => {
+  res.send("hello, friend!");
+});
+```
+
+Test the route by starting your server and browsing to `localhost:3000`. You should receive a message in the browser console saying, "hello, friend!"
