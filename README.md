@@ -14,7 +14,7 @@ Welcome to the "Fruits" App, a comprehensive module for intermediate learners re
 | Lesson                                                                               | Skills                                                |
 | ------------------------------------------------------------------------------------ | ----------------------------------------------------- |
 | [Setup](./setup/README.md)                                                           | Setting up the development environment                |
-| [Build and Run `server.js`](./build-annd-run-serverjs/README.md)                     | Create a basic Express server                         |
+| [Build and Run `server.js`](./build-and-run-serverjs/README.md)                     | Create a basic Express server                         |
 | [Build a Landing Page](./build-a-landing-page/README.md)                             | Implement a landing page using Express and EJS        |
 | [Mongoose Concepts](./mongoose-concepts/README.md)                                   | Discuss the technologies we'll be using.              |
 | [Use Mongoose to Connect to MongoDB](./use-mongoose-to-connect-to-mongodb/README.md) | Connect to MongoDB Atlas via connection string        |
